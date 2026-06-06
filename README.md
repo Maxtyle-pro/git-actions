@@ -11,6 +11,13 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
+## Запуск в Docker
+
+```powershell
+docker build -t server-time-api .
+docker run --rm -p 8000:8000 server-time-api
+```
+
 После запуска API будет доступно по адресу:
 
 - `GET http://127.0.0.1:8000/` - проверка, что сервис работает
