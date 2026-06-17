@@ -19,3 +19,13 @@ def get_server_time() -> dict[str, str]:
         "server_time": now.isoformat(),
         "timezone": now.tzname() or "",
     }
+
+
+@app.get("/date")
+def get_server_date() -> dict[str, str]:
+    now = datetime.now().astimezone()
+
+    return {
+        "server_date": now.date().isoformat(),
+        "timezone": now.tzname() or "",
+    }
