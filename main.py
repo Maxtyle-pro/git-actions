@@ -19,6 +19,11 @@ def health_check() -> dict[str, str]:
     }
 
 
+@app.get("/ping")
+def ping() -> dict[str, str]:
+    return {"message": "pong"}
+
+
 @app.get("/time")
 def get_server_time() -> dict[str, str]:
     now = datetime.now().astimezone()
