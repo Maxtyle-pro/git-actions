@@ -24,6 +24,14 @@ def ping() -> dict[str, str]:
     return {"message": "pong"}
 
 
+@app.get("/test")
+def test_endpoint() -> dict[str, str]:
+    return {
+        "status": "ok",
+        "message": "Test endpoint is working",
+    }
+
+
 @app.get("/time")
 def get_server_time() -> dict[str, str]:
     now = datetime.now().astimezone()
