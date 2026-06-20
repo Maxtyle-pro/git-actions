@@ -11,6 +11,14 @@ def read_root() -> dict[str, str]:
     return {"message": "Server Time API is running"}
 
 
+@app.get("/health")
+def health_check() -> dict[str, str]:
+    return {
+        "status": "ok",
+        "service": "Server Time API",
+    }
+
+
 @app.get("/time")
 def get_server_time() -> dict[str, str]:
     now = datetime.now().astimezone()
