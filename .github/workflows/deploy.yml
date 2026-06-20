@@ -72,9 +72,9 @@ jobs:
           GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: root
+          username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: ${{ secrets.SSH_PORT }}
           envs: IMAGE,TAG,CONTAINER_NAME,CONTAINER_PORT,GHCR_USERNAME,GHCR_TOKEN
           script: |
             # Останавливаем выполнение скрипта при первой ошибке.
